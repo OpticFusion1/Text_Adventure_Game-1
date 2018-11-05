@@ -5,6 +5,8 @@ public class Runner {
 
     private static boolean gameOn = true;
 
+    public static String[] firstNames = {"Ashley", "Ben", "Chris", "David", "Evelyn", "Franny", "Gabe", "Hayley", "Ina", "Janet", "Kevin", "Larry"};
+
     public static void main(String[] args) {
         //Room[][] building = new Room[10][10];
         //String[][] area = new String[10][20];
