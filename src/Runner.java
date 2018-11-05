@@ -6,13 +6,9 @@ public class Runner {
     private static boolean gameOn = true;
 
     public static String[] firstNames = {"Ashley", "Ben", "Chris", "David", "Evelyn", "Franny", "Gabe", "Hayley", "Ina", "Janet", "Kevin", "Larry"};
-    private static Person player1 = new Person(0,0,10,1);
+    //private static Person player1 = new Person(0,0,10,1);
 
     public static void main(String[] args) {
-        //Room[][] building = new Room[10][10];
-        //String[][] area = new String[10][20];
-        //Room[][] house = new Room[10][10];
-
         Board house = new Board(10, 20);
 
         for (int x = 0; x < house.board.length; x++) {
@@ -20,14 +16,12 @@ public class Runner {
                 house.board[x][y] = new Room(x, y);
             }
         }
+        int x = (int)(Math.random()*house.board.length);
+
 
         System.out.println(house);
-
-        //int x = (int)(Math.random()*building.length);
-
-        //Setup player 1 and the input scanner
-        //Person player1 = new Person("FirstName", "FamilyName", 0, 0);
-        //area[0][0].enterRoom(player1);
+        Person player1 = new Person (0,0,10,1);
+        house.board[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
         System.out.println("You are currently in the house. Be on the lookout for some pocket creatures!");
         System.out.println("You can move using N for North, W for West, S for South, and E for East.");
@@ -37,11 +31,10 @@ public class Runner {
             if (validMove(move, player1, house.board)) {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 
+
             } else {
                 System.out.println("Please choose a valid move.");
             }
-
-
         }
         in.close();
     }

@@ -7,6 +7,6 @@ public abstract class Creatures {
     }
 
     public String toString() {
-        return "I am a " + type + "pocket creature.";
+        return "I am an " + type + " pocket creature.";
     }
 }
