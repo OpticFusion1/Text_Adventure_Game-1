@@ -2,7 +2,7 @@
  * Person represents the player as they move through the game.
  */
 public class Person {
-    int xLoc, yLoc, health;
+    int xLoc, yLoc;
 
     public int getxLoc() {
         return xLoc;
@@ -20,11 +20,10 @@ public class Person {
         this.yLoc = yLoc;
     }
 
-    public Person (int xLoc, int yLoc, int health)
+    public Person (int xLoc, int yLoc)
     {
         this.xLoc = xLoc;
         this.yLoc = yLoc;
-        this.health = health;
     }
 
 

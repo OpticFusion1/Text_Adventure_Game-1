@@ -18,8 +18,9 @@ public class Runner {
         }
 
         System.out.println(house);
+        int health = 10;
         int numOfCreatures = 0;
-        Person player1 = new Person (0,0,10);
+        Person player1 = new Person (0,0);
         house.board[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
         System.out.println("You are currently in the house. Be on the lookout for some pocket creatures!");
@@ -30,11 +31,18 @@ public class Runner {
             if (validMove(move, player1, house.board)) {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
                 if (player1.getxLoc() == 0 && player1.getyLoc() == 3) {
-                    int x = (int)(Math.random()*10);
+                    int x = (int)(Math.random()*50);
                     Earth earth = new Earth(x);
-                    System.out.println(earth + "Level " + x);
-                    System.out.println("You have gained a new Earth creature.");
-                    numOfCreatures++;
+                    System.out.println(earth + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new Earth creature.");
+                        numOfCreatures++;
+                    }
+                    else {
+                        int q = (int)(Math.random()*3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health);
+                    }
                 }
 
             } else {
