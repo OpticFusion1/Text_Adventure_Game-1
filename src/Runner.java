@@ -5,20 +5,23 @@ public class Runner {
 
     private static boolean gameOn = true;
 
-    public static String[] firstNames = {"Ashley", "Ben", "Chris", "David", "Evelyn", "Franny", "Gabe", "Hayley", "Ina", "Janet", "Kevin", "Larry"};
-    //private static Person player1 = new Person(0,0,10,1);
-
     public static void main(String[] args) {
         Board house = new Board(10, 20);
+        Board road = new Board(5,5);
 
         for (int x = 0; x < house.board.length; x++) {
             for (int y = 0; y < house.board[x].length; y++) {
                 house.board[x][y] = new Room(x, y);
             }
         }
+        for (int x = 0; x < road.board.length; x++) {
+            for (int y = 0; y < road.board[x].length; y++) {
+                road.board[x][y] = new Room(x, y);
+            }
+        }
 
         System.out.println(house);
-        int health = 10;
+        int health = 20;
         int numOfCreatures = 0;
         Person player1 = new Person (0,0);
         house.board[0][0].enterRoom(player1);
@@ -37,12 +40,60 @@ public class Runner {
                     if (x <= 25) {
                         System.out.println("You have gained a new Earth creature.");
                         numOfCreatures++;
+                        System.out.println("You now have " + numOfCreatures + "pocket creatures.");
                     }
                     else {
                         int q = (int)(Math.random()*3 + 1);
                         health -= q;
-                        System.out.println("The creature is too strong! Your health has fallen to " + health);
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
+                }
+                if (player1.getxLoc() == 5 && player1.getyLoc() == 5) {
+                    int x = (int)(Math.random()*50);
+                    Water water = new Water(x);
+                    System.out.println(water + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new Water creature.");
+                        numOfCreatures++;
+                        System.out.println("You now have " + numOfCreatures + "pocket creatures.");
+                    }
+                    else {
+                        int q = (int)(Math.random()*3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                    }
+                }
+                if (player1.getxLoc() == 15 && player1.getyLoc() == 5) {
+                    int x = (int)(Math.random()*50);
+                    Air air = new Air(x);
+                    System.out.println(air + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new Air creature.");
+                        numOfCreatures++;
+                        System.out.println("You now have " + numOfCreatures + "pocket creatures.");
+                    }
+                    else {
+                        int q = (int)(Math.random()*3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                    }
+                }
+                if (player1.getxLoc() == 9 && player1.getyLoc() == 2) {
+                    int x = (int)(Math.random()*50);
+                    Fire fire = new Fire(x);
+                    System.out.println(fire + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new Fire creature.");
+                        numOfCreatures++;
+                    }
+                    else {
+                        int q = (int)(Math.random()*3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                    }
+                }
+                if (health == 0) {
+                    gameOff();
                 }
 
             } else {
