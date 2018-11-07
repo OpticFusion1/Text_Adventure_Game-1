@@ -40,7 +40,7 @@ public class Runner {
         while (gameOn) {
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
-            if (validMove(move, player1, house.board)) {
+            if (validMove(move, player1, house.board) && player1.getxLoc() < 10 && player1.getyLoc() < 10) {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
                 System.out.println(house);
                 if (player1.getxLoc() == 0 && player1.getyLoc() == 3) {
@@ -106,7 +106,18 @@ public class Runner {
                     gameOff();
                 }
 
-            } else {
+            }
+            else if (player1.getxLoc() == 9 && player1.getyLoc() == 9) {
+                System.out.println(road);
+                if (validMove(move, player1, road.board) && player1.getxLoc() < 5 && player1.getyLoc() < 5) {
+                    System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+                    System.out.println(road);
+                }
+                else {
+                    System.out.println("Please choose a valid move.");
+                }
+            }
+            else {
                 System.out.println("Please choose a valid move.");
             }
         }
