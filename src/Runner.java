@@ -33,6 +33,7 @@ public class Runner {
             String move = in.nextLine();
             if (validMove(move, player1, house.board)) {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+                System.out.println(house);
                 if (player1.getxLoc() == 0 && player1.getyLoc() == 3) {
                     int x = (int)(Math.random()*50);
                     Earth earth = new Earth(x);
@@ -40,7 +41,7 @@ public class Runner {
                     if (x <= 25) {
                         System.out.println("You have gained a new Earth creature.");
                         numOfCreatures++;
-                        System.out.println("You now have " + numOfCreatures + "pocket creatures.");
+                        System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
                     else {
                         int q = (int)(Math.random()*3 + 1);
@@ -55,7 +56,7 @@ public class Runner {
                     if (x <= 25) {
                         System.out.println("You have gained a new Water creature.");
                         numOfCreatures++;
-                        System.out.println("You now have " + numOfCreatures + "pocket creatures.");
+                        System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
                     else {
                         int q = (int)(Math.random()*3 + 1);
@@ -70,7 +71,7 @@ public class Runner {
                     if (x <= 25) {
                         System.out.println("You have gained a new Air creature.");
                         numOfCreatures++;
-                        System.out.println("You now have " + numOfCreatures + "pocket creatures.");
+                        System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
                     else {
                         int q = (int)(Math.random()*3 + 1);
