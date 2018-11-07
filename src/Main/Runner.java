@@ -52,7 +52,7 @@ public class Runner {
                     Earth earth = new Earth(x);
                     System.out.println(earth + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Creatures.Earth creature.");
+                        System.out.println("You have gained a new Earth creature.");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
@@ -67,7 +67,7 @@ public class Runner {
                     Water water = new Water(x);
                     System.out.println(water + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Creatures.Water creature.");
+                        System.out.println("You have gained a new Water creature.");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
@@ -82,7 +82,7 @@ public class Runner {
                     Air air = new Air(x);
                     System.out.println(air + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Creatures.Air creature.");
+                        System.out.println("You have gained a new Air creature.");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
@@ -97,7 +97,7 @@ public class Runner {
                     Fire fire = new Fire(x);
                     System.out.println(fire + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Creatures.Fire creature.");
+                        System.out.println("You have gained a new Fire creature.");
                         numOfCreatures++;
                     }
                     else {
