@@ -112,8 +112,12 @@ public class Runner {
 
             }
             else if (player1.getxLoc() == 9 && player1.getyLoc() == 9) {
+                house.board[0][0].leaveRoom(player1);
                 System.out.println(road);
-                if (validMove(move, player1, road.board) && player1.getxLoc() < 5 && player1.getyLoc() < 5) {
+                Scanner q = new Scanner(System.in);
+                road.board[0][0].enterRoom(player1);
+                String move1 = q.nextLine();
+                if (validMove(move1, player1, road.board) && player1.getxLoc() < 5 && player1.getyLoc() < 5) {
                     System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
                     System.out.println(road);
                 }
