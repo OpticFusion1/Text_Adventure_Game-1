@@ -14,6 +14,10 @@ public class Runner {
 
     private static boolean gameOn = true;
 
+    /**This builds my rooms.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Board house = new Board(10, 10);
         Board road = new Board(5,5);
