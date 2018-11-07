@@ -1,3 +1,5 @@
+package Creatures;
+
 public abstract class Creatures {
     private String type, name;
     private int level;

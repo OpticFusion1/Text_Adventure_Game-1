@@ -1,3 +1,5 @@
+package Room;
+
 public class Room {
     Person occupant;
     int xLoc,yLoc;
@@ -10,7 +12,7 @@ public class Room {
 
     /**
      * Method controls the results when a person enters this room.
-     * @param x the Person entering
+     * @param x the Room.Person entering
      */
     public void enterRoom(Person x)
     {

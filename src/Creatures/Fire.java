@@ -1,4 +1,8 @@
-public class Fire extends Creatures{
+package Creatures;
+
+import Creatures.Creatures;
+
+public class Fire extends Creatures {
     private int level;
 
     public Fire(int level) {

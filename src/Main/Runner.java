@@ -1,3 +1,12 @@
+package Main;
+
+import Creatures.Earth;
+import Creatures.Fire;
+import Creatures.Water;
+import Room.Room;
+import Room.Person;
+import Creatures.Air;
+
 import java.util.Scanner;
 import java.lang.String;
 
@@ -6,7 +15,7 @@ public class Runner {
     private static boolean gameOn = true;
 
     public static void main(String[] args) {
-        Board house = new Board(10, 20);
+        Board house = new Board(10, 10);
         Board road = new Board(5,5);
 
         for (int x = 0; x < house.board.length; x++) {
@@ -23,7 +32,7 @@ public class Runner {
         System.out.println(house);
         int health = 20;
         int numOfCreatures = 0;
-        Person player1 = new Person (0,0);
+        Person player1 = new Person(0,0);
         house.board[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
         System.out.println("You are currently in the house. Be on the lookout for some pocket creatures!");
@@ -39,7 +48,7 @@ public class Runner {
                     Earth earth = new Earth(x);
                     System.out.println(earth + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Earth creature.");
+                        System.out.println("You have gained a new Creatures.Earth creature.");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
@@ -54,7 +63,7 @@ public class Runner {
                     Water water = new Water(x);
                     System.out.println(water + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Water creature.");
+                        System.out.println("You have gained a new Creatures.Water creature.");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
@@ -64,12 +73,12 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 15 && player1.getyLoc() == 5) {
+                if (player1.getxLoc() == 3 && player1.getyLoc() == 9) {
                     int x = (int)(Math.random()*50);
                     Air air = new Air(x);
                     System.out.println(air + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Air creature.");
+                        System.out.println("You have gained a new Creatures.Air creature.");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                     }
@@ -84,7 +93,7 @@ public class Runner {
                     Fire fire = new Fire(x);
                     System.out.println(fire + " (Level " + x + ")");
                     if (x <= 25) {
-                        System.out.println("You have gained a new Fire creature.");
+                        System.out.println("You have gained a new Creatures.Fire creature.");
                         numOfCreatures++;
                     }
                     else {

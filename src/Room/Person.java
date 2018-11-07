@@ -1,5 +1,7 @@
+package Room;
+
 /**
- * Person represents the player as they move through the game.
+ * Room.Person represents the player as they move through the game.
  */
 public class Person {
     int xLoc, yLoc;
