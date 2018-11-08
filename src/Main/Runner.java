@@ -69,6 +69,21 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
+                if (player1.getxLoc() == 9 && player1.getyLoc() == 3) {
+                    int x = (int)(Math.random()*50);
+                    Earth earth = new Earth(x);
+                    System.out.println(earth + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new Earth creature.");
+                        numOfCreatures++;
+                        System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                    }
+                    else {
+                        int q = (int)(Math.random()*3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                    }
+                }
                 if (player1.getxLoc() == 5 && player1.getyLoc() == 6) {
                     int x = (int)(Math.random()*50);
                     Water water = new Water(x);
@@ -116,7 +131,23 @@ public class Runner {
                 if (health == 0) {
                     gameOff();
                 }
-
+                if (player1.getxLoc() == 2 && player1.getyLoc() == 4) {
+                    int x = (int)(Math.random()*50);
+                    Fire fire = new Fire(x);
+                    System.out.println(fire + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new Fire creature.");
+                        numOfCreatures++;
+                    }
+                    else {
+                        int q = (int)(Math.random()*3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                    }
+                }
+                if (health == 0) {
+                    gameOff();
+                }
             }
             else {
                 System.out.println("Please choose a valid move.");
