@@ -15,6 +15,8 @@ import java.lang.String;
 public class Runner {
 
     private static boolean gameOn = true;
+    String[] type = {"Air", "Earth", "Fire", "Water"};
+    String[] type1 = {"air", "earth", "fire", "water"};
 
     /**This builds my rooms.
      *
@@ -51,7 +53,7 @@ public class Runner {
                 System.out.println(house);
                 if (player1.getxLoc() == a && player1.getyLoc() == b) {
                     System.out.println("Congratulations! You have gained a legendary pocket creature." + " Level " + (int)(Math.random()*1000+100));
-                    numOfCreatures++;
+                    numOfCreatures=+1;
                     System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                 }
                 if (player1.getxLoc() == 0 && player1.getyLoc() == 1) {
@@ -69,7 +71,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == (int)(Math.random()*house.board.length) && player1.getyLoc() == (int)(Math.random()*house.board.length)) {
+                if (player1.getxLoc() == 5 && player1.getyLoc() == 6) {
                     int x = (int)(Math.random()*50);
                     Water water = new Water(x);
                     System.out.println(water + " (Level " + x + ")");
@@ -84,7 +86,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == (int)(Math.random()*house.board.length) && player1.getyLoc() == (int)(Math.random()*house.board.length)) {
+                if (player1.getxLoc() == 8 && player1.getyLoc() == 1) {
                     int x = (int)(Math.random()*50);
                     Air air = new Air(x);
                     System.out.println(air + " (Level " + x + ")");
@@ -99,7 +101,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == (int)(Math.random()*house.board.length) && player1.getyLoc() == (int)(Math.random()*house.board.length)) {
+                if (player1.getxLoc() == 7 && player1.getyLoc() == 4) {
                     int x = (int)(Math.random()*50);
                     Fire fire = new Fire(x);
                     System.out.println(fire + " (Level " + x + ")");
@@ -118,20 +120,6 @@ public class Runner {
                 }
 
             }
-            /*else if (player1.getxLoc() == 9 && player1.getyLoc() == 9) {
-                house.board[0][0].leaveRoom(player1);
-                System.out.println(road);
-                Scanner q = new Scanner(System.in);
-                road.board[0][0].enterRoom(player1);
-                String move1 = q.nextLine();
-                if (validMove(move1, player1, road.board) && player1.getxLoc() < 5 && player1.getyLoc() < 5) {
-                    System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-                    System.out.println(road);
-                }
-                else {
-                    System.out.println("Please choose a valid move.");
-                }
-            }*/
             else {
                 System.out.println("Please choose a valid move.");
             }
