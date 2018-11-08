@@ -44,6 +44,10 @@ public class Runner {
         System.out.println("You are currently in the house. Your health is at 20. Be on the lookout for some pocket creatures!");
         System.out.println("You can move using N for North, W for West, S for South, and E for East.");
         while (gameOn) {
+            if (health <= 0) {
+                System.out.println("Sorry, you lose all of your health and creatures. Game over. :(");
+                System.exit(-1);
+            }
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
             if (validMove(move, player1, house.board) && player1.getxLoc() < 10 && player1.getyLoc() < 10) {
@@ -127,9 +131,6 @@ public class Runner {
                         health -= q;
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
-                }
-                if (health == 0) {
-                    gameOff();
                 }
                 if (player1.getxLoc() == 3 && player1.getyLoc() == 3) {
                     int x = (int)(Math.random()*50);
