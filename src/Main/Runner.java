@@ -6,9 +6,11 @@ import Creatures.Water;
 import Room.Room;
 import Room.Person;
 import Creatures.Air;
+import Room.Forest;
 
 import java.util.Scanner;
 import java.lang.String;
+
 
 public class Runner {
 
@@ -20,20 +22,20 @@ public class Runner {
      */
     public static void main(String[] args) {
         Board house = new Board(10, 10);
-        Board road = new Board(5,5);
 
         for (int x = 0; x < house.board.length; x++) {
             for (int y = 0; y < house.board[x].length; y++) {
                 house.board[x][y] = new Room(x, y);
             }
         }
-        for (int x = 0; x < road.board.length; x++) {
-            for (int y = 0; y < road.board[x].length; y++) {
-                road.board[x][y] = new Room(x, y);
-            }
-        }
+        int a = (int)(Math.random()*house.board.length);
+        int b = (int)(Math.random()*house.board.length);
+        house.board[a][b] = new Forest(a, b);
 
         System.out.println(house);
+        System.out.println(a);
+        System.out.println(b);
+
         int health = 20;
         int numOfCreatures = 0;
         Person player1 = new Person(0,0);
@@ -47,7 +49,12 @@ public class Runner {
             if (validMove(move, player1, house.board) && player1.getxLoc() < 10 && player1.getyLoc() < 10) {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
                 System.out.println(house);
-                if (player1.getxLoc() == 0 && player1.getyLoc() == 3) {
+                if (player1.getxLoc() == a && player1.getyLoc() == b) {
+                    System.out.println("Congratulations! You have gained a legendary pocket creature." + " Level " + (int)(Math.random()*1000+100));
+                    numOfCreatures++;
+                    System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                }
+                if (player1.getxLoc() == 0 && player1.getyLoc() == 1) {
                     int x = (int)(Math.random()*50);
                     Earth earth = new Earth(x);
                     System.out.println(earth + " (Level " + x + ")");
@@ -62,7 +69,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 5 && player1.getyLoc() == 5) {
+                if (player1.getxLoc() == (int)(Math.random()*house.board.length) && player1.getyLoc() == (int)(Math.random()*house.board.length)) {
                     int x = (int)(Math.random()*50);
                     Water water = new Water(x);
                     System.out.println(water + " (Level " + x + ")");
@@ -77,7 +84,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 3 && player1.getyLoc() == 9) {
+                if (player1.getxLoc() == (int)(Math.random()*house.board.length) && player1.getyLoc() == (int)(Math.random()*house.board.length)) {
                     int x = (int)(Math.random()*50);
                     Air air = new Air(x);
                     System.out.println(air + " (Level " + x + ")");
@@ -92,7 +99,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 9 && player1.getyLoc() == 2) {
+                if (player1.getxLoc() == (int)(Math.random()*house.board.length) && player1.getyLoc() == (int)(Math.random()*house.board.length)) {
                     int x = (int)(Math.random()*50);
                     Fire fire = new Fire(x);
                     System.out.println(fire + " (Level " + x + ")");
