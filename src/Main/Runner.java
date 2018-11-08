@@ -111,7 +111,7 @@ public class Runner {
                 }
 
             }
-            else if (player1.getxLoc() == 9 && player1.getyLoc() == 9) {
+            /*else if (player1.getxLoc() == 9 && player1.getyLoc() == 9) {
                 house.board[0][0].leaveRoom(player1);
                 System.out.println(road);
                 Scanner q = new Scanner(System.in);
@@ -124,7 +124,7 @@ public class Runner {
                 else {
                     System.out.println("Please choose a valid move.");
                 }
-            }
+            }*/
             else {
                 System.out.println("Please choose a valid move.");
             }
@@ -132,6 +132,13 @@ public class Runner {
         in.close();
     }
 
+    /**
+     * checks if the move is valid
+     * @param move
+     * @param p
+     * @param map
+     * @return
+     */
     public static boolean validMove(String move, Person p, Room[][] map)
     {
         move = move.toLowerCase().trim();

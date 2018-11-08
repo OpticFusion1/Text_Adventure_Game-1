@@ -1,7 +1,7 @@
 package Creatures;
 
 public abstract class Creatures {
-    private String type, name;
+    private String type;
     private int level;
 
     public Creatures(String type) {
