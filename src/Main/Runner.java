@@ -23,7 +23,7 @@ public class Runner {
      * @param args
      */
     public static void main(String[] args) {
-        Board house = new Board(10, 10);
+        Board house = new Board(8, 8);
 
         for (int x = 0; x < house.board.length; x++) {
             for (int y = 0; y < house.board[x].length; y++) {
@@ -69,7 +69,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 9 && player1.getyLoc() == 3) {
+                if (player1.getxLoc() == 7 && player1.getyLoc() == 3) {
                     int x = (int)(Math.random()*50);
                     Earth earth = new Earth(x);
                     System.out.println(earth + " (Level " + x + ")");
@@ -99,7 +99,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 8 && player1.getyLoc() == 1) {
+                if (player1.getxLoc() == 3 && player1.getyLoc() == 1) {
                     int x = (int)(Math.random()*50);
                     Air air = new Air(x);
                     System.out.println(air + " (Level " + x + ")");
@@ -114,7 +114,7 @@ public class Runner {
                         System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
                 }
-                if (player1.getxLoc() == 7 && player1.getyLoc() == 4) {
+                if (player1.getxLoc() == 2 && player1.getyLoc() == 4) {
                     int x = (int)(Math.random()*50);
                     Fire fire = new Fire(x);
                     System.out.println(fire + " (Level " + x + ")");
@@ -131,7 +131,7 @@ public class Runner {
                 if (health == 0) {
                     gameOff();
                 }
-                if (player1.getxLoc() == 2 && player1.getyLoc() == 4) {
+                if (player1.getxLoc() == 2 && player1.getyLoc() == 5) {
                     int x = (int)(Math.random()*50);
                     Fire fire = new Fire(x);
                     System.out.println(fire + " (Level " + x + ")");
