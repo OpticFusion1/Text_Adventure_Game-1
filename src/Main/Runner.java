@@ -35,8 +35,6 @@ public class Runner {
         house.board[a][b] = new Forest(a, b);
 
         System.out.println(house);
-        System.out.println(a);
-        System.out.println(b);
 
         int health = 20;
         int numOfCreatures = 0;
@@ -53,7 +51,7 @@ public class Runner {
                 System.out.println(house);
                 if (player1.getxLoc() == a && player1.getyLoc() == b) {
                     System.out.println("Congratulations! You have gained a legendary pocket creature." + " Level " + (int)(Math.random()*1000+100));
-                    numOfCreatures=+1;
+                    numOfCreatures++;
                     System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                 }
                 if (player1.getxLoc() == 0 && player1.getyLoc() == 1) {
