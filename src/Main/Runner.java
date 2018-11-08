@@ -43,7 +43,7 @@ public class Runner {
         Person player1 = new Person(0,0);
         house.board[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
-        System.out.println("You are currently in the house. Be on the lookout for some pocket creatures!");
+        System.out.println("You are currently in the house. Your health is at 20. Be on the lookout for some pocket creatures!");
         System.out.println("You can move using N for North, W for West, S for South, and E for East.");
         while (gameOn) {
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
