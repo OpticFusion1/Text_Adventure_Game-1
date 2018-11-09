@@ -43,7 +43,79 @@ public class Runner {
         Scanner in = new Scanner(System.in);
         System.out.println("You are currently in the house. Your health is at 20. Be on the lookout for some pocket creatures!");
         System.out.println("You can move using N for North, W for West, S for South, and E for East.");
+        String[] type = {"Air", "Earth", "Fire", "Water"};
+
         while (gameOn) {
+            System.out.println("Where would you like to move? (Choose N, S, E, W)");
+            String move = in.nextLine();
+            if (validMove(move, player1, house.board) && player1.getxLoc() < 10 && player1.getyLoc() < 10) {
+                System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+                System.out.println(house);
+            }
+            if(player1.getxLoc()<=house.board.length && player1.getyLoc()<=house.board.length)
+            {
+                int x = (int) (Math.random() * 50);
+                int y = (int) (Math.random() * type.length);
+                if (player1.getxLoc() == a && player1.getyLoc() == b) {
+                    System.out.println("Congratulations! You have gained a legendary pocket creature." + " (Level " + (int)(Math.random()*1000+100) + ")");
+                    numOfCreatures++;
+                    System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                }
+                if (type[y].equals("Air")) {
+                    Air air = new Air(x);
+                    System.out.println(air + " (Level " + x + ")");
+                    if (x <= 25) {
+                        System.out.println("You have gained a new " + air + " creature.");
+                        numOfCreatures++;
+                        System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                    } else {
+                        int q = (int) (Math.random() * 3 + 1);
+                        health -= q;
+                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                    }
+                    if ((type[y].equals("Earth"))) {
+                        Earth earth = new Earth(x);
+                        System.out.println(earth + " (Level " + x + ")");
+                        if (x <= 25) {
+                            System.out.println("You have gained a new " + earth + " creature.");
+                            numOfCreatures++;
+                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                        } else {
+                            int q = (int) (Math.random() * 3 + 1);
+                            health -= q;
+                            System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                        }
+                        if (type[y].equals("Fire")) {
+                            Fire fire = new Fire(x);
+                            System.out.println(fire + " (Level " + x + ")");
+                            if (x <= 25) {
+                                System.out.println("You have gained a new " + fire + " creature.");
+                                numOfCreatures++;
+                                System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                            } else {
+                                int q = (int) (Math.random() * 3 + 1);
+                                health -= q;
+                                System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                            }
+                            if ((type[y].equals("Water"))) {
+                                Water water = new Water(x);
+                                System.out.println(water + " (Level " + x + ")");
+                                if (x <= 25) {
+                                    System.out.println("You have gained a new " + water + " creature.");
+                                    numOfCreatures++;
+                                    System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                                } else {
+                                    int q = (int) (Math.random() * 3 + 1);
+                                    health -= q;
+                                    System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+            /*
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
             if (validMove(move, player1, house.board) && player1.getxLoc() < 10 && player1.getyLoc() < 10) {
@@ -149,7 +221,7 @@ public class Runner {
             else {
                 System.out.println("Please choose a valid move.");
             }
-        }
+        }*/
         in.close();
     }
 
