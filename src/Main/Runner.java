@@ -58,6 +58,7 @@ public class Runner {
                         System.out.println("Congratulations! You have gained a legendary pocket creature." + " (Level " + (int) (Math.random() * 1000 + 100) + ")");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                        System.out.println("Health: " + health);
                     }
                     if (type[y].equals("Air")) {
                         Air air = new Air(x);
@@ -71,6 +72,7 @@ public class Runner {
                             health -= q;
                             System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                         }
+                        System.out.println("Health: " + health);
                     }
                     else if ((type[y].equals("Earth"))) {
                         Earth earth = new Earth(x);
@@ -84,6 +86,7 @@ public class Runner {
                             health -= q;
                             System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                         }
+                        System.out.println("Health: " + health);
                     }
                     else if (type[y].equals("Fire")) {
                         Fire fire = new Fire(x);
@@ -97,6 +100,7 @@ public class Runner {
                             health -= q;
                             System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                         }
+                        System.out.println("Health: " + health);
                     }
                     else if ((type[y].equals("Water"))) {
                         Water water = new Water(x);
@@ -110,6 +114,7 @@ public class Runner {
                             health -= q;
                             System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                         }
+                        System.out.println("Health: " + health);
                     }
                     if (health <= 0) {
                         gameOff();
