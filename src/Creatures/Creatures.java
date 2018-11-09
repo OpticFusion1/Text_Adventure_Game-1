@@ -9,6 +9,9 @@ public abstract class Creatures {
     }
 
     public String toString() {
-        return "I am an " + type + " pocket creature.";
+        if (type.equals("Earth") || type.equals("Air"))
+            return "I am an " + type + " pocket creature.";
+        else
+            return "I am a " + type + " pocket creature.";
     }
 }

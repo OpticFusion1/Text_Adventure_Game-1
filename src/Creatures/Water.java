@@ -6,7 +6,7 @@ public class Water extends Creatures {
     private int level;
 
     public Water(int level) {
-        super("Earth");
+        super("Water");
         this.level = level;
     }
 }

@@ -15,8 +15,6 @@ import java.lang.String;
 public class Runner {
 
     private static boolean gameOn = true;
-    String[] type = {"Air", "Earth", "Fire", "Water"};
-    String[] type1 = {"air", "earth", "fire", "water"};
 
     /**This builds my rooms.
      *
@@ -51,33 +49,21 @@ public class Runner {
             if (validMove(move, player1, house.board) && player1.getxLoc() < 10 && player1.getyLoc() < 10) {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
                 System.out.println(house);
-            }
-            if(player1.getxLoc()<=house.board.length && player1.getyLoc()<=house.board.length)
-            {
-                int x = (int) (Math.random() * 50);
-                int y = (int) (Math.random() * type.length);
-                if (player1.getxLoc() == a && player1.getyLoc() == b) {
-                    System.out.println("Congratulations! You have gained a legendary pocket creature." + " (Level " + (int)(Math.random()*1000+100) + ")");
-                    numOfCreatures++;
-                    System.out.println("You now have " + numOfCreatures + " pocket creatures.");
-                }
-                if (type[y].equals("Air")) {
-                    Air air = new Air(x);
-                    System.out.println(air + " (Level " + x + ")");
-                    if (x <= 25) {
-                        System.out.println("You have gained a new " + air + " creature.");
+            int statement = (int)(Math.random()*3+1);
+            if (statement == 1) {
+                if (player1.getxLoc() <= house.board.length && player1.getyLoc() <= house.board.length) {
+                    int x = (int) (Math.random() * 50);
+                    int y = (int) (Math.random() * type.length);
+                    if (player1.getxLoc() == a && player1.getyLoc() == b) {
+                        System.out.println("Congratulations! You have gained a legendary pocket creature." + " (Level " + (int) (Math.random() * 1000 + 100) + ")");
                         numOfCreatures++;
                         System.out.println("You now have " + numOfCreatures + " pocket creatures.");
-                    } else {
-                        int q = (int) (Math.random() * 3 + 1);
-                        health -= q;
-                        System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                     }
-                    if ((type[y].equals("Earth"))) {
-                        Earth earth = new Earth(x);
-                        System.out.println(earth + " (Level " + x + ")");
+                    if (type[y].equals("Air")) {
+                        Air air = new Air(x);
+                        System.out.println(air + " (Level " + x + ")");
                         if (x <= 25) {
-                            System.out.println("You have gained a new " + earth + " creature.");
+                            System.out.println("You have gained a new " + type[y] + " creature.");
                             numOfCreatures++;
                             System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                         } else {
@@ -85,36 +71,60 @@ public class Runner {
                             health -= q;
                             System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                         }
-                        if (type[y].equals("Fire")) {
-                            Fire fire = new Fire(x);
-                            System.out.println(fire + " (Level " + x + ")");
-                            if (x <= 25) {
-                                System.out.println("You have gained a new " + fire + " creature.");
-                                numOfCreatures++;
-                                System.out.println("You now have " + numOfCreatures + " pocket creatures.");
-                            } else {
-                                int q = (int) (Math.random() * 3 + 1);
-                                health -= q;
-                                System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
-                            }
-                            if ((type[y].equals("Water"))) {
-                                Water water = new Water(x);
-                                System.out.println(water + " (Level " + x + ")");
-                                if (x <= 25) {
-                                    System.out.println("You have gained a new " + water + " creature.");
-                                    numOfCreatures++;
-                                    System.out.println("You now have " + numOfCreatures + " pocket creatures.");
-                                } else {
-                                    int q = (int) (Math.random() * 3 + 1);
-                                    health -= q;
-                                    System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
-                                }
-                            }
+                    }
+                    else if ((type[y].equals("Earth"))) {
+                        Earth earth = new Earth(x);
+                        System.out.println(earth + " (Level " + x + ")");
+                        if (x <= 25) {
+                            System.out.println("You have gained a new " + type[y] + " creature.");
+                            numOfCreatures++;
+                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                        } else {
+                            int q = (int) (Math.random() * 3 + 1);
+                            health -= q;
+                            System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
                         }
+                    }
+                    else if (type[y].equals("Fire")) {
+                        Fire fire = new Fire(x);
+                        System.out.println(fire + " (Level " + x + ")");
+                        if (x <= 25) {
+                            System.out.println("You have gained a new " + type[y] + " creature.");
+                            numOfCreatures++;
+                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                        } else {
+                            int q = (int) (Math.random() * 3 + 1);
+                            health -= q;
+                            System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                        }
+                    }
+                    else if ((type[y].equals("Water"))) {
+                        Water water = new Water(x);
+                        System.out.println(water + " (Level " + x + ")");
+                        if (x <= 25) {
+                            System.out.println("You have gained a new " + type[y] + " creature.");
+                            numOfCreatures++;
+                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                        } else {
+                            int q = (int) (Math.random() * 3 + 1);
+                            health -= q;
+                            System.out.println("The creature is too strong! Your health has fallen to " + health + ".");
+                        }
+                    }
+                    if (health <= 0) {
+                        gameOff();
                     }
                 }
             }
+                else
+                    System.out.println("There's nothing in this room.");
+            }
+            else
+                System.out.println("Please choose a valid move.");
         }
+
+        }
+
             /*
             System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
@@ -222,8 +232,6 @@ public class Runner {
                 System.out.println("Please choose a valid move.");
             }
         }*/
-        in.close();
-    }
 
     /**
      * checks if the move is valid
