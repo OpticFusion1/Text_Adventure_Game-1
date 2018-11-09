@@ -12,10 +12,6 @@ public class Board {
     public Board(int height, int width) {
         this.board = new Room[height][width];
     }
-
-    public void addRoom(Room room, int row, int col) {
-        board[row][col] = room;
-    }
     public String toString() {
         String x = "";
         for (Room[] i : board) {
