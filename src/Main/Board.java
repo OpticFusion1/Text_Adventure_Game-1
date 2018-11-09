@@ -1,6 +1,6 @@
 package Main;
 
-import Room.Room;
+        import Room.Room;
 
 public class Board {
     Room[][] board;
