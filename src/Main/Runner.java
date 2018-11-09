@@ -21,7 +21,7 @@ public class Runner {
      * @param args
      */
     public static void main(String[] args) {
-        Board house = new Board(5, 5);
+        Board house = new Board(8, 7);
 
         for (int x = 0; x < house.board.length; x++) {
             for (int y = 0; y < house.board[x].length; y++) {
@@ -57,7 +57,10 @@ public class Runner {
                     if (player1.getxLoc() == a && player1.getyLoc() == b) {
                         System.out.println("Congratulations! You have gained a legendary pocket creature." + " (Level " + (int) (Math.random() * 1000 + 100) + ")");
                         numOfCreatures++;
-                        System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                        if (numOfCreatures == 1)
+                            System.out.println("You now have " + numOfCreatures + " pocket creature.");
+                        else
+                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                         System.out.println("Health: " + health);
                     }
                     if (type[y].equals("Air")) {
@@ -66,7 +69,10 @@ public class Runner {
                         if (x <= 25) {
                             System.out.println("You have gained a new " + type[y] + " creature.");
                             numOfCreatures++;
-                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                            if (numOfCreatures == 1)
+                                System.out.println("You now have " + numOfCreatures + " pocket creature.");
+                            else
+                                System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                         } else {
                             int q = (int) (Math.random() * 3 + 1);
                             health -= q;
@@ -80,7 +86,10 @@ public class Runner {
                         if (x <= 25) {
                             System.out.println("You have gained a new " + type[y] + " creature.");
                             numOfCreatures++;
-                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                            if (numOfCreatures == 1)
+                                System.out.println("You now have " + numOfCreatures + " pocket creature.");
+                            else
+                                System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                         } else {
                             int q = (int) (Math.random() * 3 + 1);
                             health -= q;
@@ -94,7 +103,10 @@ public class Runner {
                         if (x <= 25) {
                             System.out.println("You have gained a new " + type[y] + " creature.");
                             numOfCreatures++;
-                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                            if (numOfCreatures == 1)
+                                System.out.println("You now have " + numOfCreatures + " pocket creature.");
+                            else
+                                System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                         } else {
                             int q = (int) (Math.random() * 3 + 1);
                             health -= q;
@@ -108,7 +120,10 @@ public class Runner {
                         if (x <= 25) {
                             System.out.println("You have gained a new " + type[y] + " creature.");
                             numOfCreatures++;
-                            System.out.println("You now have " + numOfCreatures + " pocket creatures.");
+                            if (numOfCreatures == 1)
+                                System.out.println("You now have " + numOfCreatures + " pocket creature.");
+                            else
+                                System.out.println("You now have " + numOfCreatures + " pocket creatures.");
                         } else {
                             int q = (int) (Math.random() * 3 + 1);
                             health -= q;
@@ -121,8 +136,11 @@ public class Runner {
                     }
                 }
             }
-                else
-                    System.out.println("There's nothing in this room.");
+                else {
+                    String[] comments = {"There's nothing in this room, but don't be discouraged.", "Don't worry!", "You'll find them eventually."};
+                    int randomComment = (int)(Math.random()*3);
+                    System.out.println(comments[randomComment]);
+            }
             }
             else
                 System.out.println("Please choose a valid move.");
